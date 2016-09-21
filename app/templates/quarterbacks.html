@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h1 style='color:blue'>{{ week }}</h1>
+    {% for player in players %}
+      <h2 style='color:blue'>QB: {{ player.Name }}</h2>
+    {% endfor %}
+{% endblock %}
