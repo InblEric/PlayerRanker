@@ -29,3 +29,11 @@ def test():
     for entry in entries:
         html = html + "\n<h1 style='color:blue'>Entry: {0}!</h1>".format(int(entry))
     return html
+
+@app.route("/vote")
+def vote():
+    return render_template('voting.html')
+
+@app.route("/rankings")
+def rankings():
+    return render_template('rankings.html')
