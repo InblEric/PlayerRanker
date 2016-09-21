@@ -15,7 +15,7 @@ entries_collection = db.entries
 
 @app.route("/")
 def hello():
-    return "<h1 style='color:blue'>Welcome to the Player Ranker!</h1>"
+    return render_template('home.html')
 
 @app.route("/name")
 def name():
