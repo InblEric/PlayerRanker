@@ -1,4 +1,6 @@
 .banner		{ background: #333333; display: inline-block; color: white; }
+.playertable	{ border: solid black 1px; }
+.ptd		{ border: solid black 1px; }
 a:visited	{ color: #A9A9A9; text-decoration: none; }
 a:hover		{ color: white;  text-decoration: none; }
 a:link		{ color: #A9A9A9; text-decoration: none; }
