@@ -16,6 +16,9 @@ week = "Week1"
 # formatted "Week1", "Week2", etc
 db = client[week]
 qbs = db.qb
+rbs = db.rb
+wrs = db.wr
+tes = db.te
 
 
 @app.route("/")
@@ -39,3 +42,18 @@ def rankings():
 def quarterbacks():
     players = qbs.find()
     return render_template('quarterbacks.html', players=players, week=week)
+
+@app.route("/runningbacks")
+def runningbacks():
+    players = rbs.find()
+    return render_template('runningbacks.html', players=players, week=week)
+
+@app.route("/widereceivers")
+def widereceivers():
+    players = wrs.find()
+    return render_template('widereceivers.html', players=players, week=week)
+
+@app.route("/tightends")
+def tightends():
+    players = tes.find()
+    return render_template('tightends.html', players=players, week=week)
