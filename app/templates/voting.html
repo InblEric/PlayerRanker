@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
-    <h1>vote here</h1>
+    <h1 style='color:blue'>Vote here for {{ week }}</h1>
+
+    <h2><a href="{{ url_for('vote') }}">{{ players[0].Name }}</a> VS <a href="{{ url_for('vote') }}">{{ players[1].Name }}</a></h2>
+
 {% endblock %}
 

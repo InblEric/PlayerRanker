@@ -5,6 +5,8 @@ from app import app
 from pymongo import MongoClient
 from flask import (render_template, request, redirect, url_for, session)
 
+from utils import *
+
 config = configparser.ConfigParser()
 config.read("../config/config.cfg")
 
@@ -32,7 +34,12 @@ def name():
 
 @app.route("/vote")
 def vote():
-    return render_template('voting.html')
+    players = qbs.find()
+    rands = randomNums(players.count())
+    comps = []
+    comps.append(players[rands[0]])
+    comps.append(players[rands[1]])
+    return render_template('voting.html', players=comps, week=week)
 
 @app.route("/rankings")
 def rankings():
