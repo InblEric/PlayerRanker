@@ -5,7 +5,7 @@ from app import app
 from pymongo import MongoClient
 from flask import (render_template, request, redirect, url_for, session)
 
-from utils import *
+from utils import random_ops as rando
 
 config = configparser.ConfigParser()
 config.read("../config/config.cfg")
@@ -35,7 +35,7 @@ def name():
 @app.route("/vote")
 def vote():
     players = qbs.find()
-    rands = randomNums(players.count())
+    rands = rando.randomNums(players.count())
     comps = []
     comps.append(players[rands[0]])
     comps.append(players[rands[1]])
