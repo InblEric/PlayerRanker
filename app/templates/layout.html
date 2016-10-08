@@ -3,7 +3,30 @@
 <body>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <div class=banner>
-    <a href="{{ url_for('hello') }}">Home</a> | <a href="{{ url_for('vote') }}">Vote here!</a> | <a href="{{ url_for('rankings') }}">Rankings</a> | <a href="{{ url_for('quarterbacks') }}">Quarterbacks</a> | <a href="{{ url_for('runningbacks') }}">Runningbacks</a> | <a href="{{ url_for('widereceivers') }}">Wide Receivers</a> | <a href="{{ url_for('tightends') }}">Tight Ends</a>
+    <a href="{{ url_for('hello') }}">Home</a> | <a href="{{ url_for('vote') }}">Vote here!</a> | <a href="{{ url_for('rankings') }}">Rankings</a>
+    | <select name="Quarterbacks" onchange="location = this.value;">
+      <option selected disabled>Quarterbacks</option>
+      <option value="{{ url_for('quarterbacks_std') }}">Standard</option>
+      <option value="{{ url_for('quarterbacks_6') }}">6pt TDs</option>
+    </select>
+    | <select name="Runningbacks" onchange="location = this.value;">
+      <option selected disabled>Runningbacks</option>
+      <option value="{{ url_for('runningbacks_std') }}">Standard</option>
+      <option value="{{ url_for('runningbacks_half') }}">Half PPR</option>
+      <option value="{{ url_for('runningbacks_ppr') }}">PPR</option>
+    </select>
+    | <select name="Wide Receivers" onchange="location = this.value;">
+      <option selected disabled>Wide Receivers</option>
+      <option value="{{ url_for('widereceivers_std') }}">Standard</option>
+      <option value="{{ url_for('widereceivers_half') }}">Half PPR</option>
+      <option value="{{ url_for('widereceivers_ppr') }}">PPR</option>
+    </select>
+    | <select name="Tight Ends" onchange="location = this.value;">
+      <option selected disabled>Tight Ends</option>
+      <option value="{{ url_for('tightends_std') }}">Standard</option>
+      <option value="{{ url_for('tightends_half') }}">Half PPR</option>
+      <option value="{{ url_for('tightends_ppr') }}">PPR</option>
+    </select>
 </div>
 {% block body %}
 {% endblock %}
