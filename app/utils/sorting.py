@@ -1,3 +1,3 @@
 def sort_players(players, key = "elo_std"):
-    # TODO:
+    players.sort([(key, -1)])
     return players
