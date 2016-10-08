@@ -43,88 +43,68 @@ def vote():
 def rankings():
     return render_template('rankings.html')
 
-@app.route("/quarterbacks")
-def quarterbacks():
+@app.route("/quarterbacks_std")
+def quarterbacks_std():
     players = qbs.find()
+    players = sort_players(players, key = "elo_std")
     return render_template('quarterbacks.html', players=players, week=week)
 
-#@app.route("/quarterbacks_std")
-#def quarterbacks_std():
-#    players = qbs.find()
-#    players = sort_players(players, key = "elo_std")
-#    return render_template('quarterbacks.html', players=players, week=week)
+@app.route("/quarterbacks_6")
+def quarterbacks_6():
+    players = qbs.find()
+    players = sort_players(players, key = "elo_6")
+    return render_template('quarterbacks.html', players=players, week=week)
 
-#@app.route("/quarterbacks_6")
-#def quarterbacks_6():
-#    players = qbs.find()
-#    players = sort_players(players, key = "elo_6")
-#    return render_template('quarterbacks.html', players=players, week=week)
-
-@app.route("/runningbacks")
-def runningbacks():
+@app.route("/runningbacks_std")
+def runningbacks_std():
     players = rbs.find()
+    players = sort_players(players, key = "elo_std")
     return render_template('runningbacks.html', players=players, week=week)
 
-#app.route("/runningbacks_std")
-#def runningbacks_std():
-#    players = rbs.find()
-#    players = sort_players(players, key = "elo_std")
-#    return render_template('runningbacks.html', players=players, week=week)
+@app.route("/runningbacks_half")
+def runningbacks_half():
+    players = rbs.find()
+    players = sort_players(players, key = "elo_half")
+    return render_template('runningbacks.html', players=players, week=week)
 
-#app.route("/runningbacks_half")
-#def runningbacks_half():
-#    players = rbs.find()
-#    players = sort_players(players, key = "elo_half")
-#    return render_template('runningbacks.html', players=players, week=week)
+@app.route("/runningbacks_ppr")
+def runningbacks_ppr():
+    players = rbs.find()
+    players = sort_players(players, key = "elo_ppr")
+    return render_template('runningbacks.html', players=players, week=week)
 
-#app.route("/runningbacks_ppr")
-#def runningbacks_ppr():
-#    players = rbs.find()
-#    players = sort_players(players, key = "elo_ppr")
-#    return render_template('runningbacks.html', players=players, week=week)
-
-@app.route("/widereceivers")
-def widereceivers():
+@app.route("/widereceivers_std")
+def widereceivers_std():
     players = wrs.find()
+    players = sort_players(players, key = "elo_std")
     return render_template('widereceivers.html', players=players, week=week)
 
-#app.route("/widereceivers_std")
-#def widereceivers_std():
-#    players = wrs.find()
-#    players = sort_players(players, key = "elo_std")
-#    return render_template('widereceivers.html', players=players, week=week)
+@app.route("/widereceivers_half")
+def widereceivers_half():
+    players = wrs.find()
+    players = sort_players(players, key = "elo_half")
+    return render_template('widereceivers.html', players=players, week=week)
 
-#app.route("/widereceivers_half")
-#def widereceivers_half():
-#    players = wrs.find()
-#    players = sort_players(players, key = "elo_half")
-#    return render_template('widereceivers.html', players=players, week=week)
+@app.route("/widereceivers_ppr")
+def widereceivers_ppr():
+    players = wrs.find()
+    players = sort_players(players, key = "elo_ppr")
+    return render_template('widereceivers.html', players=players, week=week)
 
-#app.route("/widereceivers_ppr")
-#def widereceivers_ppr():
-#    players = wrs.find()
-#    players = sort_players(players, key = "elo_ppr")
-#    return render_template('widereceivers.html', players=players, week=week)
-
-@app.route("/tightends")
-def tightends():
+@app.route("/tightends_std")
+def tightends_std():
     players = tes.find()
+    players = sort_players(players, key = "elo_std")
     return render_template('tightends.html', players=players, week=week)
 
-#app.route("/tightends_std")
-#def tightends_std():
-#    players = tes.find()
-#    players = sort_players(players, key = "elo_std")
-#    return render_template('tightends.html', players=players, week=week)
+@app.route("/tightends_half")
+def tightends_half():
+    players = tes.find()
+    players = sort_players(players, key = "elo_half")
+    return render_template('tightends.html', players=players, week=week)
 
-#app.route("/tightends_half")
-#def tightends_half():
-#    players = tes.find()
-#    players = sort_players(players, key = "elo_half")
-#    return render_template('tightends.html', players=players, week=week)
-
-#app.route("/tightends_ppr")
-#def tightends_ppr():
-#    players = tes.find()
-#    players = sort_players(players, key = "elo_ppr")
-#    return render_template('tightends.html', players=players, week=week)
+@app.route("/tightends_ppr")
+def tightends_ppr():
+    players = tes.find()
+    players = sort_players(players, key = "elo_ppr")
+    return render_template('tightends.html', players=players, week=week)
