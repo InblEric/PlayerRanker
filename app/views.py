@@ -23,7 +23,8 @@ tes = db.te
 
 @app.route("/")
 def hello():
-    return render_template('home.html', week=week)
+    #return render_template('home.html', week=week)
+    return "Hello, World"
 
 @app.route("/name")
 def name():
